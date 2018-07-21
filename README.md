@@ -19,7 +19,7 @@ Hence more the users better the information and this can only keep growing.
 You can also:
   - Update the latest ErrorDef.json (avalible on gitHub) to make sure you have latest solution to the errors 
 
-This is a lightweight tool and since its in its inital version might still contain some bugs.You can falg on [gitHub][df1] for any feature requests or issues.
+This is a lightweight tool and since its in its inital version might still contain some bugs.You can flag on [gitHub][df1] for any feature requests or issues.
 
 Make sure you pick the latest version of Application and ErrorDef from [here]
 
