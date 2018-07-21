@@ -19,7 +19,7 @@ Hence more the users better the information and this can only keep growing.
 You can also:
   - Update the latest ErrorDef.json (avalible on gitHub) to make sure you have latest solution to the errors 
 
-This is a lightweight tool and since its in its inital version might still contain some bugs.You can falg on [gitHub][df1] for any feature requests or issues.
+This is a lightweight tool and since its in its inital version might still contain some bugs.You can flag on [gitHub][df1] for any feature requests or issues.
 
 Make sure you pick the latest version of Application and ErrorDef from [here]
 
@@ -60,7 +60,7 @@ Want to contribute? Great! let me know via mail.
 **Free Software, Hell Yeah!**
 
 
-   [df1]: <https://github.com/vijaykirann/SiebLog-Analyser/issues>
-   [here]: <https://github.com/vijaykirann/SiebLog-Analyser/releases>
+   [df1]: <https://github.com/vijaykirann/SiebLogScanner/issues>
+   [here]: <https://github.com/vijaykirann/SiebLogScanner/releases>
    [LiteDb]: <https://github.com/mbdavid/LiteDB>
    [MongoDb]: <https://github.com/mongodb/mongo>
