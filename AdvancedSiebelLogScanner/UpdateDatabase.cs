@@ -69,7 +69,7 @@ namespace AdvancedSiebelLogScanner
             }
             catch (MongoException mEx)
             {
-                 MessageBox.Show(mEx.ToString());
+              MessageBox.Show(mEx.ToString());
             }
         }
 
