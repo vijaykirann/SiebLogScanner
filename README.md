@@ -60,7 +60,7 @@ Want to contribute? Great! let me know via mail.
 **Free Software, Hell Yeah!**
 
 
-   [df1]: <https://github.com/vijaykirann/SiebLog-Analyser/issues>
-   [here]: <https://github.com/vijaykirann/SiebLog-Analyser/releases>
+   [df1]: <https://github.com/vijaykirann/SiebLogScanner/issues>
+   [here]: <https://github.com/vijaykirann/SiebLogScanner/releases>
    [LiteDb]: <https://github.com/mbdavid/LiteDB>
    [MongoDb]: <https://github.com/mongodb/mongo>
