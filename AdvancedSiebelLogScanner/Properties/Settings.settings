@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="AdvancedSiebelLogScanner.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Notepad" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Path" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">sieberrlog-shard-00-00-nlbll.mongodb.net:27017,sieberrlog-shard-00-01-nlbll.mongodb.net:27017,sieberrlog-shard-00-02-nlbll.mongodb.net:27017/test?ssl=true&amp;replicaSet=SiebErrLog-shard-0&amp;authSource=admin&amp;retryWrites=true</Value>
+    </Setting>
+    <Setting Name="User" Type="System.String" Scope="User">
+      <Value Profile="(Default)">SCRAM</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
