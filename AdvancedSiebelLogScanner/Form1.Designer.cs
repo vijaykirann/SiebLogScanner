@@ -120,6 +120,9 @@
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage6.SuspendLayout();
             this.metroTabPage3.SuspendLayout();
@@ -163,7 +166,7 @@
             this.metroTabControl1.Location = new System.Drawing.Point(5, 78);
             this.metroTabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 7;
+            this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(1343, 503);
             this.metroTabControl1.TabIndex = 0;
             // 
@@ -185,7 +188,7 @@
             // 
             // metroTextBox1
             // 
-            this.metroTextBox1.Location = new System.Drawing.Point(75, 36);
+            this.metroTextBox1.Location = new System.Drawing.Point(223, 36);
             this.metroTextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.metroTextBox1.Name = "metroTextBox1";
             this.metroTextBox1.ReadOnly = true;
@@ -194,17 +197,18 @@
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(680, 36);
+            this.metroButton1.Location = new System.Drawing.Point(860, 36);
             this.metroButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(117, 28);
             this.metroButton1.TabIndex = 1;
             this.metroButton1.Text = "Browse";
+            this.metroButton1.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // metroButton2
             // 
-            this.metroButton2.Location = new System.Drawing.Point(884, 36);
+            this.metroButton2.Location = new System.Drawing.Point(1064, 36);
             this.metroButton2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.metroButton2.Name = "metroButton2";
             this.metroButton2.Size = new System.Drawing.Size(117, 28);
@@ -214,7 +218,7 @@
             // 
             // metroButton3
             // 
-            this.metroButton3.Location = new System.Drawing.Point(680, 24);
+            this.metroButton3.Location = new System.Drawing.Point(860, 35);
             this.metroButton3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.metroButton3.Name = "metroButton3";
             this.metroButton3.Size = new System.Drawing.Size(117, 28);
@@ -224,7 +228,7 @@
             // 
             // metroTextBox8
             // 
-            this.metroTextBox8.Location = new System.Drawing.Point(64, 24);
+            this.metroTextBox8.Location = new System.Drawing.Point(223, 35);
             this.metroTextBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.metroTextBox8.Name = "metroTextBox8";
             this.metroTextBox8.ReadOnly = true;
@@ -234,30 +238,36 @@
             // metroLabel7
             // 
             this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(357, 43);
+            this.metroLabel7.CustomBackground = true;
+            this.metroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel7.Location = new System.Drawing.Point(320, 43);
             this.metroLabel7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(127, 20);
+            this.metroLabel7.Size = new System.Drawing.Size(138, 20);
             this.metroLabel7.TabIndex = 15;
             this.metroLabel7.Text = "Application Version";
             // 
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(393, 79);
+            this.metroLabel2.CustomBackground = true;
+            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel2.Location = new System.Drawing.Point(356, 79);
             this.metroLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(99, 20);
+            this.metroLabel2.Size = new System.Drawing.Size(106, 20);
             this.metroLabel2.TabIndex = 5;
             this.metroLabel2.Text = "Log Start Time";
             // 
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(400, 114);
+            this.metroLabel3.CustomBackground = true;
+            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel3.Location = new System.Drawing.Point(363, 114);
             this.metroLabel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(95, 20);
+            this.metroLabel3.Size = new System.Drawing.Size(100, 20);
             this.metroLabel3.TabIndex = 7;
             this.metroLabel3.Text = "Log End Time";
             // 
@@ -304,20 +314,24 @@
             // metroLabel6
             // 
             this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(802, 114);
+            this.metroLabel6.CustomBackground = true;
+            this.metroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel6.Location = new System.Drawing.Point(770, 114);
             this.metroLabel6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(75, 20);
+            this.metroLabel6.Size = new System.Drawing.Size(77, 20);
             this.metroLabel6.TabIndex = 13;
             this.metroLabel6.Text = "Server PID";
             // 
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(790, 43);
+            this.metroLabel4.CustomBackground = true;
+            this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel4.Location = new System.Drawing.Point(759, 43);
             this.metroLabel4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(82, 20);
+            this.metroLabel4.Size = new System.Drawing.Size(87, 20);
             this.metroLabel4.TabIndex = 9;
             this.metroLabel4.Text = "Component";
             // 
@@ -332,10 +346,12 @@
             // metroLabel5
             // 
             this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(830, 79);
+            this.metroLabel5.CustomBackground = true;
+            this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel5.Location = new System.Drawing.Point(793, 79);
             this.metroLabel5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(50, 20);
+            this.metroLabel5.Size = new System.Drawing.Size(53, 20);
             this.metroLabel5.TabIndex = 11;
             this.metroLabel5.Text = "Task Id";
             // 
@@ -966,9 +982,12 @@
             // 
             // metroPanel2
             // 
+            this.metroPanel2.BackColor = System.Drawing.Color.Lavender;
+            this.metroPanel2.Controls.Add(this.metroLabel1);
             this.metroPanel2.Controls.Add(this.metroButton2);
             this.metroPanel2.Controls.Add(this.metroButton1);
             this.metroPanel2.Controls.Add(this.metroTextBox1);
+            this.metroPanel2.CustomBackground = true;
             this.metroPanel2.HorizontalScrollbarBarColor = true;
             this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel2.HorizontalScrollbarSize = 10;
@@ -982,6 +1001,7 @@
             // 
             // metroPanel3
             // 
+            this.metroPanel3.Controls.Add(this.metroLabel11);
             this.metroPanel3.Controls.Add(this.metroButton3);
             this.metroPanel3.Controls.Add(this.metroTextBox8);
             this.metroPanel3.HorizontalScrollbarBarColor = true;
@@ -997,6 +1017,8 @@
             // 
             // metroPanel4
             // 
+            this.metroPanel4.BackColor = System.Drawing.Color.Lavender;
+            this.metroPanel4.Controls.Add(this.metroLabel12);
             this.metroPanel4.Controls.Add(this.metroTextBox6);
             this.metroPanel4.Controls.Add(this.metroLabel7);
             this.metroPanel4.Controls.Add(this.metroTextBox4);
@@ -1009,12 +1031,13 @@
             this.metroPanel4.Controls.Add(this.metroTextBox7);
             this.metroPanel4.Controls.Add(this.metroTextBox2);
             this.metroPanel4.Controls.Add(this.metroTextBox3);
+            this.metroPanel4.CustomBackground = true;
             this.metroPanel4.HorizontalScrollbarBarColor = true;
             this.metroPanel4.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel4.HorizontalScrollbarSize = 10;
-            this.metroPanel4.Location = new System.Drawing.Point(-4, 245);
+            this.metroPanel4.Location = new System.Drawing.Point(3, 245);
             this.metroPanel4.Name = "metroPanel4";
-            this.metroPanel4.Size = new System.Drawing.Size(1343, 202);
+            this.metroPanel4.Size = new System.Drawing.Size(1332, 202);
             this.metroPanel4.TabIndex = 20;
             this.metroPanel4.VerticalScrollbarBarColor = true;
             this.metroPanel4.VerticalScrollbarHighlightOnWheel = false;
@@ -1036,6 +1059,56 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(649, 89);
             this.tableLayoutPanel1.TabIndex = 5;
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.BackColor = System.Drawing.Color.Lavender;
+            this.metroLabel1.CustomBackground = true;
+            this.metroLabel1.CustomForeColor = true;
+            this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel1.Location = new System.Drawing.Point(25, 23);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(77, 50);
+            this.metroLabel1.Style = MetroFramework.MetroColorStyle.Orange;
+            this.metroLabel1.TabIndex = 4;
+            this.metroLabel1.Text = "Browse\r\n Log";
+            this.metroLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroLabel1.UseStyleColors = true;
+            // 
+            // metroLabel11
+            // 
+            this.metroLabel11.AutoSize = true;
+            this.metroLabel11.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.metroLabel11.CustomForeColor = true;
+            this.metroLabel11.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel11.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel11.Location = new System.Drawing.Point(18, 26);
+            this.metroLabel11.Name = "metroLabel11";
+            this.metroLabel11.Size = new System.Drawing.Size(116, 50);
+            this.metroLabel11.Style = MetroFramework.MetroColorStyle.Orange;
+            this.metroLabel11.TabIndex = 5;
+            this.metroLabel11.Text = "Notepad++\r\nIntegration";
+            this.metroLabel11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroLabel11.UseStyleColors = true;
+            // 
+            // metroLabel12
+            // 
+            this.metroLabel12.AutoSize = true;
+            this.metroLabel12.BackColor = System.Drawing.Color.Lavender;
+            this.metroLabel12.CustomBackground = true;
+            this.metroLabel12.CustomForeColor = true;
+            this.metroLabel12.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel12.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel12.Location = new System.Drawing.Point(25, 79);
+            this.metroLabel12.Name = "metroLabel12";
+            this.metroLabel12.Size = new System.Drawing.Size(71, 50);
+            this.metroLabel12.Style = MetroFramework.MetroColorStyle.Orange;
+            this.metroLabel12.TabIndex = 16;
+            this.metroLabel12.Text = "Log\r\nDetails";
+            this.metroLabel12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroLabel12.UseStyleColors = true;
             // 
             // Form1
             // 
@@ -1067,7 +1140,9 @@
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
             this.metroPanel2.ResumeLayout(false);
+            this.metroPanel2.PerformLayout();
             this.metroPanel3.ResumeLayout(false);
+            this.metroPanel3.PerformLayout();
             this.metroPanel4.ResumeLayout(false);
             this.metroPanel4.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -1167,6 +1242,9 @@
         private MetroFramework.Controls.MetroPanel metroPanel3;
         private MetroFramework.Controls.MetroPanel metroPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private MetroFramework.Controls.MetroLabel metroLabel12;
+        private MetroFramework.Controls.MetroLabel metroLabel11;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
     }
 }
 
