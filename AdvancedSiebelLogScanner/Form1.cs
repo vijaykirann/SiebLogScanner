@@ -418,20 +418,17 @@ namespace AdvancedSiebelLogScanner
             {
                 var errorCode = listViewError.SelectedItems[0].SubItems[2].Text;
                 var errorDesc = listViewError.SelectedItems[0].SubItems[3].Text;
-                var db = new LiteDatabase(@"ErrorMsg.db");
-                var Rec = db.GetCollection("ErrorMsg").Find(Query.Contains("_id", errorCode), limit: 1);
-                if (Rec.Count() > 0)
+                metroTextBox9.Text = errorCode.ToString();
+                metroTextBox10.Text = errorDesc.ToString();
+                var db = new LiteDatabase(@"Filename=ErrorMsg.db; Connection=shared");
+                var collection = db.GetCollection<ErrorMsg>("ErrorMsg");
+                var Rec = collection.FindById(errorCode);
+                if (Rec != null)
                 {
-                    {
-                        metroTextBox9.Text = Rec.ElementAt(0).Get("_id").ElementAt(0).ToString();
-                        metroTextBox10.Text = Rec.ElementAt(0).Get("Desc").ElementAt(0).ToString();
-                        metroTextBox11.Text = Rec.ElementAt(0).Get("Solution").ElementAt(0).ToString();
-                    }
+                    metroTextBox11.Text = Rec.Solution;
                 }
                 else
                 {
-                    metroTextBox9.Text = errorCode.ToString();
-                    metroTextBox10.Text = "'"+errorDesc.ToString()+"'";
                     metroTextBox11.Text = "No Solution Documented Yet";
                 }
             }
