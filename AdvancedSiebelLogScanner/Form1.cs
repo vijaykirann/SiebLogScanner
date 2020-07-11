@@ -17,6 +17,7 @@ namespace AdvancedSiebelLogScanner
     {
         private ListViewColumnSorter lvwColumnSorter;
         string Notepad = Settings.Default.Notepad.ToString();
+        string MongoInt = Settings.Default.MongoInt.ToString();
         public Form1()
         {
             InitializeComponent();
@@ -24,6 +25,7 @@ namespace AdvancedSiebelLogScanner
             this.listViewPerf.ListViewItemSorter = lvwColumnSorter;
             metroTextBox8.Text = Notepad;
             metroTabControl1.SelectTab("metroTabPage6");
+            metroToggle1.Checked = (MongoInt == "True") ? true : false;
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
@@ -492,11 +494,18 @@ namespace AdvancedSiebelLogScanner
                 if (metroTextBox9.Text.ToString() != "")
                 {
                     UpdateDatabase.updateLiteDb(metroTextBox9.Text.ToString(), metroTextBox10.Text.ToString(), metroTextBox11.Text.ToString());
+                    if (metroToggle1.Checked)
                     UpdateDatabase.updateMongoDbAsync(metroTextBox9.Text.ToString(), metroTextBox11.Text.ToString());
                 }
             }
             
 
+        }
+
+        private void metroToggle1_CheckedChanged(object sender, EventArgs e)
+        {
+            Settings.Default.MongoInt = metroToggle1.Checked.ToString();
+            Settings.Default.Save();
         }
     }
 }

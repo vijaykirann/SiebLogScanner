@@ -11,5 +11,8 @@
     <Setting Name="User" Type="System.String" Scope="User">
       <Value Profile="(Default)">SCRAM</Value>
     </Setting>
+    <Setting Name="MongoInt" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>
