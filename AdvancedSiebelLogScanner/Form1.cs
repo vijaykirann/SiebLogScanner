@@ -68,13 +68,13 @@ namespace AdvancedSiebelLogScanner
         {
             if (metroTextBox1.Text != "")
             {
-            listViewError.Items.Clear();
-            listViewEvtcxt.Items.Clear();
-            listViewExecSQL.Items.Clear();
-            listViewPerf.Items.Clear();
-            listViewWF.Items.Clear();
-            listViewTBUI.Items.Clear();
-            LogAnalyze();
+                listViewError.Items.Clear();
+                listViewEvtcxt.Items.Clear();
+                listViewExecSQL.Items.Clear();
+                listViewPerf.Items.Clear();
+                listViewWF.Items.Clear();
+                listViewTBUI.Items.Clear();
+                LogAnalyze();
             }
         }
         public void LogAnalyze()
@@ -116,162 +116,162 @@ namespace AdvancedSiebelLogScanner
             bool isBind = false;
             try
             {
-            if (checked(str1.IndexOf(".log")) > 0)
-            {
-                ValidLog = true;
-                linecnt = 1;
-            }
-            while ((str1 != null) && (ValidLog == true))
-            {
-                num1 = str1.IndexOf("\t");
+                if (checked(str1.IndexOf(".log")) > 0)
                 {
-                    if (str1.IndexOf("Bind variable") > 0)
+                    ValidLog = true;
+                    linecnt = 1;
+                }
+                while ((str1 != null) && (ValidLog == true))
+                {
+                    num1 = str1.IndexOf("\t");
                     {
-                        isSQL = false;
-                        isBind = true;
-                        str2 = str1.Substring(checked(str1.LastIndexOf(":") + 1)).Trim();
-                        str4 = string.Concat(str4, str2, Environment.NewLine);
-                    }
-                    if (str1.IndexOf("SQL Statement") > 0 && isBind == true)
-                    {
-                        ListViewItem item = new ListViewItem(new[] { str3, str15, str6, str4, Convert.ToString(linenbr) });
-                        listViewExecSQL.Items.Add(item);
-                        str14 = str6;
-                        isBind = false;
-                        str6 = "";
-                        str4 = "";
-                        str3 = "";
-                    }
+                        if (str1.IndexOf("Bind variable") > 0)
+                        {
+                            isSQL = false;
+                            isBind = true;
+                            str2 = str1.Substring(checked(str1.LastIndexOf(":") + 1)).Trim();
+                            str4 = string.Concat(str4, str2, Environment.NewLine);
+                        }
+                        if (str1.IndexOf("SQL Statement") > 0 && isBind == true)
+                        {
+                            ListViewItem item = new ListViewItem(new[] { str3, str15, str6, str4, Convert.ToString(linenbr) });
+                            listViewExecSQL.Items.Add(item);
+                            str14 = str6;
+                            isBind = false;
+                            str6 = "";
+                            str4 = "";
+                            str3 = "";
+                        }
 
-                    if (isSQL)
-                    {
-                        if (str1.IndexOf("WHERE") > 0 && selectsql == true)
+                        if (isSQL)
                         {
-                            str15 = str6.Substring(checked(str6.LastIndexOf(".") + 1)).Trim();
-                            str15 = str15.Substring(0, str15.IndexOf(" "));
+                            if (str1.IndexOf("WHERE") > 0 && selectsql == true)
+                            {
+                                str15 = str6.Substring(checked(str6.LastIndexOf(".") + 1)).Trim();
+                                str15 = str15.Substring(0, str15.IndexOf(" "));
+                            }
+                            str6 = string.Concat(str6, str1.TrimEnd(new char[0]), Environment.NewLine); //reads sql
+                            if (str1.IndexOf("INSERT INTO SIEBEL.") > 0 && selectsql == false)
+                            {
+                                str15 = str6.Substring(checked(str6.LastIndexOf(".") + 1)).Trim();
+                                str15 = str15.Substring(0, str15.IndexOf(" ("));
+                            }
+                            if (str1.IndexOf("UPDATE SIEBEL.") > 0 && selectsql == false)
+                            {
+                                str15 = str6.Substring(checked(str6.LastIndexOf(".") + 1)).Trim();
+                                str15 = str15.Substring(0, str15.IndexOf("SET"));
+                            }
                         }
-                        str6 = string.Concat(str6, str1.TrimEnd(new char[0]), Environment.NewLine); //reads sql
-                        if (str1.IndexOf("INSERT INTO SIEBEL.") > 0 && selectsql == false)
+                        if (str1.IndexOf("SELECT statement with ID") > 0 || str1.IndexOf("INSERT/UPDATE statement with ID") > 0)
                         {
-                            str15 = str6.Substring(checked(str6.LastIndexOf(".") + 1)).Trim();
-                            str15 = str15.Substring(0, str15.IndexOf(" ("));
+                            isSQL = true;
+                            linenbr = linecnt;
+                            str3 = str1.Substring(checked(str1.LastIndexOf(":") + 1)).Trim();
+                            if (str1.IndexOf("SELECT statement with ID") > 0)
+                            {
+                                selectsql = true;
+                            }
+                            else
+                            {
+                                selectsql = false;
+                            }
                         }
-                        if (str1.IndexOf("UPDATE SIEBEL.") > 0 && selectsql == false)
+                        if (str1.IndexOf("SQL Statement") > 0)
                         {
-                            str15 = str6.Substring(checked(str6.LastIndexOf(".") + 1)).Trim();
-                            str15 = str15.Substring(0, str15.IndexOf("SET"));
+                            linenbr = linecnt;
+                            num5 = str1.LastIndexOf(":");
+                            num3 = str1.IndexOf("SQL Statement");
+                            str7 = str1.Substring((num3), num5 - num3).Trim();
+                            str8 = str1.Substring(checked(num5 + 1), checked(checked(str1.IndexOf(".") + 4) - num5));
+                            ListViewItem item = new ListViewItem(new[] { str7, str14, str8, Convert.ToString(linenbr) });
+                            listViewPerf.Items.Add(item);
                         }
-                    }
-                    if (str1.IndexOf("SELECT statement with ID") > 0 || str1.IndexOf("INSERT/UPDATE statement with ID") > 0)
-                    {
-                        isSQL = true;
-                        linenbr = linecnt;
-                        str3 = str1.Substring(checked(str1.LastIndexOf(":") + 1)).Trim();
-                        if (str1.IndexOf("SELECT statement with ID") > 0)
+                        if (num1 > 0 && (str1.Substring(checked(num1 + 1)).StartsWith("Error")))
                         {
-                            selectsql = true;
+                            num4 = str1.IndexOf("SBL");
+                            if (num4 > 0)
+                            {
+                                str9 = str1.Substring(checked(num4), 13).Trim(); ///error code
+                                str10 = str1.Substring(checked(checked(num4 + 13) + 1)).Trim(); ///error description
+                                num2 = idxofn(str1, '\t', 4) + 1;//index of date
+                                if (num2 > 0 && DateTime.TryParseExact(str1.Substring(num2, 19), "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.None, out dateTime))
+                                {
+                                    str11 = dateTime.ToString("dd-MMM-yy HH:mm:ss");
+                                }
+                                str12 = "WARNING";
+                                if (str1.Substring(checked(num1 + 1)).StartsWith("Error"))
+                                {
+                                    str12 = "ERROR";
+                                }
+                                linenbr = linecnt;
+                                ListViewItem item = new ListViewItem(new[] { str11, str12, str9, str10, Convert.ToString(linenbr) });
+                                listViewError.Items.Add(item);
+                            }
                         }
-                        else
+                        //Getting the Task details
+                        if (str1.IndexOf("Task engine requested to navigate to next step:") > 0)
                         {
-                            selectsql = false;
-                        }
-                    }
-                    if (str1.IndexOf("SQL Statement") > 0)
-                    {
-                        linenbr = linecnt;
-                        num5 = str1.LastIndexOf(":");
-                        num3 = str1.IndexOf("SQL Statement");
-                        str7 = str1.Substring((num3), num5 - num3).Trim();
-                        str8 = str1.Substring(checked(num5 + 1), checked(checked(str1.IndexOf(".") + 4) - num5));
-                        ListViewItem item = new ListViewItem(new[] { str7, str14, str8, Convert.ToString(linenbr) });
-                        listViewPerf.Items.Add(item);
-                    }
-                    if (num1 > 0 && (str1.Substring(checked(num1 + 1)).StartsWith("Error")))
-                    {
-                        num4 = str1.IndexOf("SBL");
-                        if (num4 > 0)
-                        {
-                            str9 = str1.Substring(checked(num4), 13).Trim(); ///error code
-                            str10 = str1.Substring(checked(checked(num4 + 13) + 1)).Trim(); ///error description
                             num2 = idxofn(str1, '\t', 4) + 1;//index of date
                             if (num2 > 0 && DateTime.TryParseExact(str1.Substring(num2, 19), "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.None, out dateTime))
                             {
                                 str11 = dateTime.ToString("dd-MMM-yy HH:mm:ss");
                             }
-                            str12 = "WARNING";
-                            if (str1.Substring(checked(num1 + 1)).StartsWith("Error"))
+                            num6 = str1.IndexOf(": '") + 3;
+                            num7 = str1.LastIndexOf("'");
+                            str13 = str1.Substring(checked(num6), num7 - num6).Trim();
+                            linenbr = linecnt;
+                            ListViewItem item = new ListViewItem(new[] { str13, str11, Convert.ToString(linenbr) });
+                            listViewTBUI.Items.Add(item);
+                        }
+                        //Getting the Workflow details
+                        if (str1.IndexOf("Instantiating process definition") > 0)
+                        {
+                            num8 = str1.IndexOf("'") + 1;
+                            num9 = str1.LastIndexOf("'");
+                            str16 = str1.Substring(checked(num8), num9 - num8).Trim();
+                        }
+                        if (str1.IndexOf("Instantiating step definition") > 0)
+                        {
+                            num2 = idxofn(str1, '\t', 4) + 1;//index of date
+                            if (num2 > 0 && DateTime.TryParseExact(str1.Substring(num2, 19), "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.None, out dateTime))
                             {
-                                str12 = "ERROR";
+                                str11 = dateTime.ToString("dd-MMM-yy HH:mm:ss");
+                            }
+                            num8 = str1.IndexOf("'") + 1;
+                            num9 = str1.LastIndexOf("'");
+                            str17 = str1.Substring(checked(num8), num9 - num8).Trim();
+                            linenbr = linecnt;
+                            ListViewItem item = new ListViewItem(new[] { str16, str17, str11, Convert.ToString(linenbr) });
+                            listViewWF.Items.Add(item);
+                        }
+                        //EventContext Logging
+                        if (str1.IndexOf("EventContext") == 0)
+                        {
+                            str9 = str1.Substring(checked(str1.IndexOf("EvtCtx") + 6), checked(idxofn(str1, '\t', 2)) - checked(str1.IndexOf("EvtCtx")) - 6).Trim();
+                            str10 = str1.Substring(checked(str1.LastIndexOf("\t") + 1)).Trim();
+                            num2 = idxofn(str1, '\t', 4) + 1;//index of date
+                            if (num2 > 0 && DateTime.TryParseExact(str1.Substring(num2, 19), "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.None, out dateTime))
+                            {
+                                str11 = dateTime.ToString("dd-MMM-yy HH:mm:ss");
                             }
                             linenbr = linecnt;
-                            ListViewItem item = new ListViewItem(new[] { str11, str12, str9, str10, Convert.ToString(linenbr) });
-                            listViewError.Items.Add(item);
+                            ListViewItem item = new ListViewItem(new[] { str9, str10, str11, Convert.ToString(linenbr) });
+                            listViewEvtcxt.Items.Add(item);
                         }
                     }
-                    //Getting the Task details
-                    if (str1.IndexOf("Task engine requested to navigate to next step:") > 0)
-                    {
-                        num2 = idxofn(str1, '\t', 4) + 1;//index of date
-                        if (num2 > 0 && DateTime.TryParseExact(str1.Substring(num2, 19), "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.None, out dateTime))
-                        {
-                            str11 = dateTime.ToString("dd-MMM-yy HH:mm:ss");
-                        }
-                        num6 = str1.IndexOf(": '") + 3;
-                        num7 = str1.LastIndexOf("'");
-                        str13 = str1.Substring(checked(num6), num7 - num6).Trim();
-                        linenbr = linecnt;
-                        ListViewItem item = new ListViewItem(new[] { str13, str11, Convert.ToString(linenbr) });
-                        listViewTBUI.Items.Add(item);
-                    }
-                    //Getting the Workflow details
-                    if (str1.IndexOf("Instantiating process definition") > 0)
-                    {
-                        num8 = str1.IndexOf("'") + 1;
-                        num9 = str1.LastIndexOf("'");
-                        str16 = str1.Substring(checked(num8), num9 - num8).Trim();
-                    }
-                    if (str1.IndexOf("Instantiating step definition") > 0)
-                    {
-                        num2 = idxofn(str1, '\t', 4) + 1;//index of date
-                        if (num2 > 0 && DateTime.TryParseExact(str1.Substring(num2, 19), "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.None, out dateTime))
-                        {
-                            str11 = dateTime.ToString("dd-MMM-yy HH:mm:ss");
-                        }
-                        num8 = str1.IndexOf("'") + 1;
-                        num9 = str1.LastIndexOf("'");
-                        str17 = str1.Substring(checked(num8), num9 - num8).Trim();
-                        linenbr = linecnt;
-                        ListViewItem item = new ListViewItem(new[] { str16, str17, str11, Convert.ToString(linenbr) });
-                        listViewWF.Items.Add(item);
-                    }
-                    //EventContext Logging
-                    if (str1.IndexOf("EventContext") == 0)
-                    {
-                        str9 = str1.Substring(checked(str1.IndexOf("EvtCtx") + 6), checked(idxofn(str1, '\t', 2)) - checked(str1.IndexOf("EvtCtx")) - 6).Trim();
-                        str10 = str1.Substring(checked(str1.LastIndexOf("\t") + 1)).Trim();
-                        num2 = idxofn(str1, '\t', 4) + 1;//index of date
-                        if (num2 > 0 && DateTime.TryParseExact(str1.Substring(num2, 19), "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.None, out dateTime))
-                        {
-                            str11 = dateTime.ToString("dd-MMM-yy HH:mm:ss");
-                        }
-                        linenbr = linecnt;
-                        ListViewItem item = new ListViewItem(new[] { str9, str10, str11, Convert.ToString(linenbr) });
-                        listViewEvtcxt.Items.Add(item);
-                    }
+                    str1 = sr.ReadLine();
+                    linecnt = linecnt + 1;
                 }
-                str1 = sr.ReadLine();
-                linecnt = linecnt + 1;
             }
-            }
-            catch(Exception maEx)
+            catch (Exception maEx)
             {
                 MessageBox.Show(maEx.ToString());
             }
             finally
             {
-                linecnt = 0;linenbr = 0;num1 = 0;num2 = 0;num3 = 0;num4 = 0;num5 = 0;num6 = 0;num7 = 0;num8 = 0;num9 = 0;
-                str2 = "";str3 = "";str4 = "";str6 = "";str7 = "";str8 = "";str9 = "";str10 = "";str11 = "";str12 = "";str13 = "";
-                str14 = "";str15 = "";str16 = "";str17 = "";selectsql = false;isSQL = false;isBind = false; 
+                linecnt = 0; linenbr = 0; num1 = 0; num2 = 0; num3 = 0; num4 = 0; num5 = 0; num6 = 0; num7 = 0; num8 = 0; num9 = 0;
+                str2 = ""; str3 = ""; str4 = ""; str6 = ""; str7 = ""; str8 = ""; str9 = ""; str10 = ""; str11 = ""; str12 = ""; str13 = "";
+                str14 = ""; str15 = ""; str16 = ""; str17 = ""; selectsql = false; isSQL = false; isBind = false;
             }
             Application.UseWaitCursor = false;
         }
@@ -439,17 +439,17 @@ namespace AdvancedSiebelLogScanner
         //Load local data
         private void metroButton4_Click(object sender, EventArgs e)
         {
-                openLoadDef.FileName = "";
-                openLoadDef.ShowDialog();
-                string errordef = openLoadDef.FileName;
+            openLoadDef.FileName = "";
+            openLoadDef.ShowDialog();
+            string errordef = openLoadDef.FileName;
 
-                if (errordef != "")
-                {
-                    List<LiteDB.BsonDocument> docs = new List<LiteDB.BsonDocument>();
-                    StreamReader r = new StreamReader(errordef);
-                    var json = r.ReadToEnd();
-                    var jsonObj = JsonSerializer.DeserializeArray(json);
-                    using (var db = new LiteDatabase("ErrorMsg.db"))
+            if (errordef != "")
+            {
+                List<LiteDB.BsonDocument> docs = new List<LiteDB.BsonDocument>();
+                StreamReader r = new StreamReader(errordef);
+                var json = r.ReadToEnd();
+                var jsonObj = JsonSerializer.DeserializeArray(json);
+                using (var db = new LiteDatabase("ErrorMsg.db"))
                     try
                     {
                         {
@@ -460,16 +460,17 @@ namespace AdvancedSiebelLogScanner
                             ErrO.EnsureIndex("_id");
                         }
                     }
-                    catch(Exception ex) {
-                        MessageBox.Show(ex.ToString()) ;
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
                     }
                     finally
                     {
                         json = null;
                         jsonObj = null;
                     }
- 
-                }
+
+            }
             MessageBox.Show("Error Definations Updated :) ");
         }
 
@@ -481,7 +482,7 @@ namespace AdvancedSiebelLogScanner
 
         private void checkBox1_CheckedChangedAsync(object sender, EventArgs e)
         {
-            if(checkBox1.Checked)
+            if (checkBox1.Checked)
             {
                 checkBox1.Text = "Save";
                 metroTextBox11.ReadOnly = false;
@@ -495,10 +496,10 @@ namespace AdvancedSiebelLogScanner
                 {
                     UpdateDatabase.updateLiteDb(metroTextBox9.Text.ToString(), metroTextBox10.Text.ToString(), metroTextBox11.Text.ToString());
                     if (metroToggle1.Checked)
-                    UpdateDatabase.updateMongoDbAsync(metroTextBox9.Text.ToString(), metroTextBox11.Text.ToString());
+                        UpdateDatabase.updateMongoDbAsync(metroTextBox9.Text.ToString(), metroTextBox11.Text.ToString());
                 }
             }
-            
+
 
         }
 
@@ -510,7 +511,23 @@ namespace AdvancedSiebelLogScanner
 
         private void metroTabControl1_Selected(object sender, TabControlEventArgs e)
         {
-                metroPanel1.Visible = (e.TabPage.Text.ToString() == "Error Log") ? true : false;
+            if (e.TabPage.Text.ToString() == "Error Log")
+                openChildFormInPanel(new ErrorLogForm());
+        }
+        private Form activeForm = null;
+        private void openChildFormInPanel(Form childForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            metroPanel1.Controls.Add(childForm);
+            metroPanel1.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+
         }
     }
 }
