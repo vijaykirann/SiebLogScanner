@@ -56,6 +56,13 @@
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
+            this.metroTabPage4 = new MetroFramework.Controls.MetroTabPage();
+            this.listViewTBUI = new System.Windows.Forms.ListView();
+            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.contextMenuStripTBUI = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.openInNotepadToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
             this.listViewError = new System.Windows.Forms.ListView();
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -69,6 +76,8 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.metroButton4 = new MetroFramework.Controls.MetroButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.metroToggle1 = new MetroFramework.Controls.MetroToggle();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.listViewExecSQL = new System.Windows.Forms.ListView();
@@ -81,13 +90,6 @@
             this.copySQLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.copyBindVariableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openInNotepadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.metroTabPage4 = new MetroFramework.Controls.MetroTabPage();
-            this.listViewTBUI = new System.Windows.Forms.ListView();
-            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.contextMenuStripTBUI = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.openInNotepadToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
             this.listViewPerf = new System.Windows.Forms.ListView();
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -123,21 +125,19 @@
             this.metroTextBox9 = new MetroFramework.Controls.MetroTextBox();
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
             this.openLoadDef = new System.Windows.Forms.OpenFileDialog();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.metroToggle1 = new MetroFramework.Controls.MetroToggle();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage6.SuspendLayout();
             this.metroPanel4.SuspendLayout();
             this.metroPanel3.SuspendLayout();
             this.metroPanel2.SuspendLayout();
+            this.metroTabPage4.SuspendLayout();
+            this.contextMenuStripTBUI.SuspendLayout();
             this.metroTabPage3.SuspendLayout();
             this.contextMenuStripError.SuspendLayout();
             this.metroTabPage8.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.contextMenuStripExecSQL.SuspendLayout();
-            this.metroTabPage4.SuspendLayout();
-            this.contextMenuStripTBUI.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
             this.contextMenuStripPerf.SuspendLayout();
             this.metroTabPage5.SuspendLayout();
@@ -158,8 +158,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.metroTabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.metroTabControl1.Controls.Add(this.metroTabPage6);
-            this.metroTabControl1.Controls.Add(this.metroTabPage4);
             this.metroTabControl1.Controls.Add(this.metroTabPage3);
+            this.metroTabControl1.Controls.Add(this.metroTabPage4);
             this.metroTabControl1.Controls.Add(this.metroTabPage8);
             this.metroTabControl1.Controls.Add(this.metroTabPage1);
             this.metroTabControl1.Controls.Add(this.metroTabPage2);
@@ -168,9 +168,10 @@
             this.metroTabControl1.Location = new System.Drawing.Point(5, 78);
             this.metroTabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 2;
+            this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(1343, 481);
             this.metroTabControl1.TabIndex = 0;
+            this.metroTabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.metroTabControl1_Selected);
             // 
             // metroTabPage6
             // 
@@ -473,6 +474,68 @@
             this.metroTextBox1.Size = new System.Drawing.Size(539, 28);
             this.metroTextBox1.TabIndex = 3;
             // 
+            // metroTabPage4
+            // 
+            this.metroTabPage4.Controls.Add(this.listViewTBUI);
+            this.metroTabPage4.HorizontalScrollbarBarColor = true;
+            this.metroTabPage4.HorizontalScrollbarSize = 12;
+            this.metroTabPage4.Location = new System.Drawing.Point(4, 42);
+            this.metroTabPage4.Margin = new System.Windows.Forms.Padding(4);
+            this.metroTabPage4.Name = "metroTabPage4";
+            this.metroTabPage4.Size = new System.Drawing.Size(1335, 435);
+            this.metroTabPage4.TabIndex = 3;
+            this.metroTabPage4.Text = "TaskBased UI Log";
+            this.metroTabPage4.VerticalScrollbarBarColor = true;
+            this.metroTabPage4.VerticalScrollbarSize = 13;
+            // 
+            // listViewTBUI
+            // 
+            this.listViewTBUI.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader15,
+            this.columnHeader16,
+            this.columnHeader17});
+            this.listViewTBUI.ContextMenuStrip = this.contextMenuStripTBUI;
+            this.listViewTBUI.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listViewTBUI.FullRowSelect = true;
+            this.listViewTBUI.HideSelection = false;
+            this.listViewTBUI.Location = new System.Drawing.Point(0, 0);
+            this.listViewTBUI.Margin = new System.Windows.Forms.Padding(4);
+            this.listViewTBUI.Name = "listViewTBUI";
+            this.listViewTBUI.Size = new System.Drawing.Size(1335, 435);
+            this.listViewTBUI.TabIndex = 2;
+            this.listViewTBUI.UseCompatibleStateImageBehavior = false;
+            this.listViewTBUI.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader15
+            // 
+            this.columnHeader15.Text = "STEP NAME";
+            this.columnHeader15.Width = 102;
+            // 
+            // columnHeader16
+            // 
+            this.columnHeader16.Text = "TIMESTAMP";
+            this.columnHeader16.Width = 158;
+            // 
+            // columnHeader17
+            // 
+            this.columnHeader17.Text = "LINE";
+            // 
+            // contextMenuStripTBUI
+            // 
+            this.contextMenuStripTBUI.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStripTBUI.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openInNotepadToolStripMenuItem3});
+            this.contextMenuStripTBUI.Name = "contextMenuStripTBUI";
+            this.contextMenuStripTBUI.Size = new System.Drawing.Size(214, 28);
+            this.contextMenuStripTBUI.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStripTBUI_Opening);
+            // 
+            // openInNotepadToolStripMenuItem3
+            // 
+            this.openInNotepadToolStripMenuItem3.Name = "openInNotepadToolStripMenuItem3";
+            this.openInNotepadToolStripMenuItem3.Size = new System.Drawing.Size(213, 24);
+            this.openInNotepadToolStripMenuItem3.Text = "Open in Notepad++";
+            this.openInNotepadToolStripMenuItem3.Click += new System.EventHandler(this.openInNotepadToolStripMenuItem3_Click);
+            // 
             // metroTabPage3
             // 
             this.metroTabPage3.Controls.Add(this.listViewError);
@@ -612,6 +675,32 @@
             this.textBox1.Text = "Get the latest ErrorDef.json from the same location and import it using the below" +
     " button";
             // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.White;
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(4, 63);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(391, 51);
+            this.textBox2.TabIndex = 5;
+            this.textBox2.Text = "Enable Mongo DB Integration";
+            // 
+            // metroToggle1
+            // 
+            this.metroToggle1.AutoSize = true;
+            this.metroToggle1.Location = new System.Drawing.Point(402, 62);
+            this.metroToggle1.Name = "metroToggle1";
+            this.metroToggle1.Size = new System.Drawing.Size(80, 21);
+            this.metroToggle1.TabIndex = 6;
+            this.metroToggle1.Text = "Off";
+            this.metroToggle1.UseVisualStyleBackColor = true;
+            this.metroToggle1.CheckedChanged += new System.EventHandler(this.metroToggle1_CheckedChanged);
+            // 
             // richTextBox1
             // 
             this.richTextBox1.BackColor = System.Drawing.Color.White;
@@ -713,68 +802,6 @@
             this.openInNotepadToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
             this.openInNotepadToolStripMenuItem.Text = "Open in Notepad++";
             this.openInNotepadToolStripMenuItem.Click += new System.EventHandler(this.openInNotepadToolStripMenuItem_Click);
-            // 
-            // metroTabPage4
-            // 
-            this.metroTabPage4.Controls.Add(this.listViewTBUI);
-            this.metroTabPage4.HorizontalScrollbarBarColor = true;
-            this.metroTabPage4.HorizontalScrollbarSize = 12;
-            this.metroTabPage4.Location = new System.Drawing.Point(4, 42);
-            this.metroTabPage4.Margin = new System.Windows.Forms.Padding(4);
-            this.metroTabPage4.Name = "metroTabPage4";
-            this.metroTabPage4.Size = new System.Drawing.Size(1335, 435);
-            this.metroTabPage4.TabIndex = 3;
-            this.metroTabPage4.Text = "TaskBased UI Log";
-            this.metroTabPage4.VerticalScrollbarBarColor = true;
-            this.metroTabPage4.VerticalScrollbarSize = 13;
-            // 
-            // listViewTBUI
-            // 
-            this.listViewTBUI.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader15,
-            this.columnHeader16,
-            this.columnHeader17});
-            this.listViewTBUI.ContextMenuStrip = this.contextMenuStripTBUI;
-            this.listViewTBUI.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listViewTBUI.FullRowSelect = true;
-            this.listViewTBUI.HideSelection = false;
-            this.listViewTBUI.Location = new System.Drawing.Point(0, 0);
-            this.listViewTBUI.Margin = new System.Windows.Forms.Padding(4);
-            this.listViewTBUI.Name = "listViewTBUI";
-            this.listViewTBUI.Size = new System.Drawing.Size(1335, 435);
-            this.listViewTBUI.TabIndex = 2;
-            this.listViewTBUI.UseCompatibleStateImageBehavior = false;
-            this.listViewTBUI.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader15
-            // 
-            this.columnHeader15.Text = "STEP NAME";
-            this.columnHeader15.Width = 102;
-            // 
-            // columnHeader16
-            // 
-            this.columnHeader16.Text = "TIMESTAMP";
-            this.columnHeader16.Width = 158;
-            // 
-            // columnHeader17
-            // 
-            this.columnHeader17.Text = "LINE";
-            // 
-            // contextMenuStripTBUI
-            // 
-            this.contextMenuStripTBUI.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStripTBUI.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openInNotepadToolStripMenuItem3});
-            this.contextMenuStripTBUI.Name = "contextMenuStripTBUI";
-            this.contextMenuStripTBUI.Size = new System.Drawing.Size(214, 28);
-            this.contextMenuStripTBUI.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStripTBUI_Opening);
-            // 
-            // openInNotepadToolStripMenuItem3
-            // 
-            this.openInNotepadToolStripMenuItem3.Name = "openInNotepadToolStripMenuItem3";
-            this.openInNotepadToolStripMenuItem3.Size = new System.Drawing.Size(213, 24);
-            this.openInNotepadToolStripMenuItem3.Text = "Open in Notepad++";
-            this.openInNotepadToolStripMenuItem3.Click += new System.EventHandler(this.openInNotepadToolStripMenuItem3_Click);
             // 
             // metroTabPage2
             // 
@@ -1117,32 +1144,6 @@
             // 
             this.openLoadDef.FileName = "openFileDialog3";
             // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.White;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(4, 63);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(391, 51);
-            this.textBox2.TabIndex = 5;
-            this.textBox2.Text = "Enable Mongo DB Integration";
-            // 
-            // metroToggle1
-            // 
-            this.metroToggle1.AutoSize = true;
-            this.metroToggle1.Location = new System.Drawing.Point(402, 62);
-            this.metroToggle1.Name = "metroToggle1";
-            this.metroToggle1.Size = new System.Drawing.Size(80, 21);
-            this.metroToggle1.TabIndex = 6;
-            this.metroToggle1.Text = "Off";
-            this.metroToggle1.UseVisualStyleBackColor = true;
-            this.metroToggle1.CheckedChanged += new System.EventHandler(this.metroToggle1_CheckedChanged);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1164,6 +1165,8 @@
             this.metroPanel3.PerformLayout();
             this.metroPanel2.ResumeLayout(false);
             this.metroPanel2.PerformLayout();
+            this.metroTabPage4.ResumeLayout(false);
+            this.contextMenuStripTBUI.ResumeLayout(false);
             this.metroTabPage3.ResumeLayout(false);
             this.contextMenuStripError.ResumeLayout(false);
             this.metroTabPage8.ResumeLayout(false);
@@ -1171,8 +1174,6 @@
             this.tableLayoutPanel1.PerformLayout();
             this.metroTabPage1.ResumeLayout(false);
             this.contextMenuStripExecSQL.ResumeLayout(false);
-            this.metroTabPage4.ResumeLayout(false);
-            this.contextMenuStripTBUI.ResumeLayout(false);
             this.metroTabPage2.ResumeLayout(false);
             this.contextMenuStripPerf.ResumeLayout(false);
             this.metroTabPage5.ResumeLayout(false);

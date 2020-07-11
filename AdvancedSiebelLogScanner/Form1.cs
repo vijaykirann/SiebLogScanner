@@ -507,5 +507,10 @@ namespace AdvancedSiebelLogScanner
             Settings.Default.MongoInt = metroToggle1.Checked.ToString();
             Settings.Default.Save();
         }
+
+        private void metroTabControl1_Selected(object sender, TabControlEventArgs e)
+        {
+                metroPanel1.Visible = (e.TabPage.Text.ToString() == "Error Log") ? true : false;
+        }
     }
 }
