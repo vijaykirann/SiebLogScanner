@@ -513,6 +513,20 @@ namespace AdvancedSiebelLogScanner
         {
             if (e.TabPage.Text.ToString() == "Error Log")
                 openChildFormInPanel(new ErrorLogForm());
+            if (e.TabPage.Text.ToString() == "File Select")
+                openChildFormInPanel(new BlankForm());
+            if (e.TabPage.Text.ToString() == "TaskBased UI Log")
+                openChildFormInPanel(new BlankForm());
+            if (e.TabPage.Text.ToString() == "Execution SQL")
+                openChildFormInPanel(new BlankForm());
+            if (e.TabPage.Text.ToString() == "SQL Performance")
+                openChildFormInPanel(new BlankForm());
+            if (e.TabPage.Text.ToString() == "Workflow Log")
+                openChildFormInPanel(new BlankForm());
+            if (e.TabPage.Text.ToString() == "Event Context")
+                openChildFormInPanel(new BlankForm());
+            if (e.TabPage.Text.ToString() == "About")
+                openChildFormInPanel(new BlankForm());
         }
         private Form activeForm = null;
         private void openChildFormInPanel(Form childForm)
