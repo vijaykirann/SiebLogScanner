@@ -39,7 +39,6 @@
             // 
             // metroLabel8
             // 
-            this.metroLabel8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.metroLabel8.AutoSize = true;
             this.metroLabel8.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel8.Location = new System.Drawing.Point(42, 9);
@@ -51,7 +50,6 @@
             // 
             // metroTextBox9
             // 
-            this.metroTextBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.metroTextBox9.Location = new System.Drawing.Point(167, 4);
             this.metroTextBox9.Margin = new System.Windows.Forms.Padding(4);
             this.metroTextBox9.MaxLength = 20;
@@ -85,6 +83,7 @@
             // 
             // checkBox1
             // 
+            this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.checkBox1.Appearance = System.Windows.Forms.Appearance.Button;
             this.checkBox1.AutoSize = true;
             this.checkBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
@@ -99,9 +98,6 @@
             // 
             // metroLabel10
             // 
-            this.metroLabel10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.metroLabel10.AutoSize = true;
             this.metroLabel10.BackColor = System.Drawing.Color.Black;
             this.metroLabel10.FontWeight = MetroFramework.MetroLabelWeight.Bold;
@@ -114,7 +110,9 @@
             // 
             // metroTextBox11
             // 
-            this.metroTextBox11.Dock = System.Windows.Forms.DockStyle.Right;
+            this.metroTextBox11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.metroTextBox11.Location = new System.Drawing.Point(689, 0);
             this.metroTextBox11.Margin = new System.Windows.Forms.Padding(4);
             this.metroTextBox11.MaxLength = 2000;
