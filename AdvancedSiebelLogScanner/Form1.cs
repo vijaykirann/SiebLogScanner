@@ -154,6 +154,7 @@ namespace AdvancedSiebelLogScanner
                             if (str1.IndexOf("WHERE") > 0 && selectsql == true)
                             {
                                 str15 = str6.Substring(checked(str6.LastIndexOf(".") + 1)).Trim();
+                                if (str15.IndexOf(" ") >= 0)
                                 str15 = str15.Substring(0, str15.IndexOf(" "));
                             }
                             str6 = string.Concat(str6, str1.TrimEnd(new char[0]), Environment.NewLine); //reads sql
