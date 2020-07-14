@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using MongoDB.Driver;
 using MongoDB.Bson;
+using BrightIdeasSoftware;
 
 namespace AdvancedSiebelLogScanner
 {
@@ -114,6 +115,11 @@ namespace AdvancedSiebelLogScanner
             bool selectsql = false;
             bool isSQL = false;
             bool isBind = false;
+            Stack<string> BSStack = new Stack<string>() ;
+            List<BSList> OlistviewBS = new List<BSList>();
+            string str18 = "";
+            string str19 = "";
+            string str20 = "";
             try
             {
                 if (checked(str1.IndexOf(".log")) > 0)
@@ -258,10 +264,50 @@ namespace AdvancedSiebelLogScanner
                             ListViewItem item = new ListViewItem(new[] { str9, str10, str11, Convert.ToString(linenbr) });
                             listViewEvtcxt.Items.Add(item);
                         }
+                        //Business Service Exectution
+                        if (str1.IndexOf(": Business Service") > 0)
+                        {
+                            if (str1.IndexOf("Begin: Business Service") > 0)
+                            {
+                                num8 = str1.IndexOf("'") + 1;
+                                num9 = idxofn(str1, '\'', 2);//BS Name Ends
+                                str17 = str1.Substring(checked(num8), num9 - num8).Trim();
+                                num8 = idxofn(str1, '\'', 3) + 1;
+                                num9 = str1.LastIndexOf("'");//Method Name Ends
+                                str18 = str1.Substring(checked(num8), num9 - num8).Trim();
+                                num2 = idxofn(str1, '\t', 4) + 1;//index of date
+                                if (num2 > 0 && DateTime.TryParseExact(str1.Substring(num2, 19), "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.None, out dateTime)) ;
+                                linenbr = linecnt;
+                                num8 = str1.LastIndexOf(" ");
+                                str16 = str1.Substring(checked(num8)).Trim();
+                                str19 = "" + str16 + "|" + str17 + "|" + str18 + "|" + dateTime + "|" + linenbr;
+                                BSStack.Push(str19);
+                            }
+                            if (str1.IndexOf("End: Business Service") > 0)
+                            {
+                                str20 = BSStack.Pop();
+                                num8 = str1.IndexOf("'") + 1;
+                                num9 = idxofn(str1, '\'', 2);//BS Name Ends
+                                str17 = str1.Substring(checked(num8), num9 - num8).Trim();
+                                num8 = idxofn(str1, '\'', 3) + 1;
+                                num9 = str1.LastIndexOf("'");//Method Name Ends
+                                str18 = str1.Substring(checked(num8), num9 - num8).Trim();
+                                str13 = "" + str17 + "|" + str18;
+                                if (str20.Contains(str13))
+                                {
+                                    num2 = idxofn(str1, '\t', 4) + 1;//index of date
+                                    if (num2 > 0 && DateTime.TryParseExact(str1.Substring(num2, 19), "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.None, out dateTime)) ;
+                                    var words = str20.Split('|');
+                                    OlistviewBS.Add(new BSList(words[0], words[1], words[2], Convert.ToDateTime(words[3]), dateTime, Int32.Parse(words[4]), dateTime - Convert.ToDateTime(words[3])));
+                                }
+                                
+                            }
+                        }
                     }
                     str1 = sr.ReadLine();
                     linecnt = linecnt + 1;
                 }
+                this.objectListView1.SetObjects(OlistviewBS);
             }
             catch (Exception maEx)
             {
@@ -271,7 +317,8 @@ namespace AdvancedSiebelLogScanner
             {
                 linecnt = 0; linenbr = 0; num1 = 0; num2 = 0; num3 = 0; num4 = 0; num5 = 0; num6 = 0; num7 = 0; num8 = 0; num9 = 0;
                 str2 = ""; str3 = ""; str4 = ""; str6 = ""; str7 = ""; str8 = ""; str9 = ""; str10 = ""; str11 = ""; str12 = ""; str13 = "";
-                str14 = ""; str15 = ""; str16 = ""; str17 = ""; selectsql = false; isSQL = false; isBind = false;
+                str14 = ""; str15 = ""; str16 = ""; str17 = ""; selectsql = false; isSQL = false; isBind = false; str18 = "";
+                BSStack.Clear(); OlistviewBS.Clear();str19 = "";str20 = "";
             }
             Application.UseWaitCursor = false;
         }

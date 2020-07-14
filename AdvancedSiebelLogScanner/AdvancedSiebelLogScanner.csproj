@@ -106,6 +106,9 @@
     <Reference Include="MongoDB.Libmongocrypt, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MongoDB.Libmongocrypt.1.0.0\lib\net452\MongoDB.Libmongocrypt.dll</HintPath>
     </Reference>
+    <Reference Include="ObjectListView, Version=2.9.1.1072, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4, processorArchitecture=MSIL">
+      <HintPath>..\packages\ObjectListView.Official.2.9.1\lib\net20\ObjectListView.dll</HintPath>
+    </Reference>
     <Reference Include="SharpCompress, Version=0.23.0.0, Culture=neutral, PublicKeyToken=afb0a02973931d96, processorArchitecture=MSIL">
       <HintPath>..\packages\SharpCompress.0.23.0\lib\net45\SharpCompress.dll</HintPath>
     </Reference>
@@ -132,6 +135,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BSList.cs" />
     <Compile Include="ErrorMsg.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

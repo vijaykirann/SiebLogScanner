@@ -56,6 +56,22 @@
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
+            this.metroTabPage8 = new MetroFramework.Controls.MetroTabPage();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.metroButton4 = new MetroFramework.Controls.MetroButton();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.metroToggle1 = new MetroFramework.Controls.MetroToggle();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.metroTabPage9 = new MetroFramework.Controls.MetroTabPage();
+            this.objectListView1 = new BrightIdeasSoftware.ObjectListView();
+            this._RequestId = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this._BsName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this._MethodInvoked = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this._StartTime = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this._EndTime = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this._Line = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
             this.listViewError = new System.Windows.Forms.ListView();
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -72,13 +88,6 @@
             this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.contextMenuStripTBUI = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.openInNotepadToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.metroTabPage8 = new MetroFramework.Controls.MetroTabPage();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.metroButton4 = new MetroFramework.Controls.MetroButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.metroToggle1 = new MetroFramework.Controls.MetroToggle();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.listViewExecSQL = new System.Windows.Forms.ListView();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -125,18 +134,20 @@
             this.metroTextBox9 = new MetroFramework.Controls.MetroTextBox();
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
             this.openLoadDef = new System.Windows.Forms.OpenFileDialog();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this._RunTime = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage6.SuspendLayout();
             this.metroPanel4.SuspendLayout();
             this.metroPanel3.SuspendLayout();
             this.metroPanel2.SuspendLayout();
+            this.metroTabPage8.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.metroTabPage9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListView1)).BeginInit();
             this.metroTabPage3.SuspendLayout();
             this.contextMenuStripError.SuspendLayout();
             this.metroTabPage4.SuspendLayout();
             this.contextMenuStripTBUI.SuspendLayout();
-            this.metroTabPage8.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.contextMenuStripExecSQL.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
@@ -159,17 +170,18 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.metroTabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.metroTabControl1.Controls.Add(this.metroTabPage6);
+            this.metroTabControl1.Controls.Add(this.metroTabPage9);
+            this.metroTabControl1.Controls.Add(this.metroTabPage8);
             this.metroTabControl1.Controls.Add(this.metroTabPage3);
             this.metroTabControl1.Controls.Add(this.metroTabPage4);
             this.metroTabControl1.Controls.Add(this.metroTabPage1);
             this.metroTabControl1.Controls.Add(this.metroTabPage2);
             this.metroTabControl1.Controls.Add(this.metroTabPage5);
             this.metroTabControl1.Controls.Add(this.metroTabPage7);
-            this.metroTabControl1.Controls.Add(this.metroTabPage8);
             this.metroTabControl1.Location = new System.Drawing.Point(5, 78);
             this.metroTabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 7;
+            this.metroTabControl1.SelectedIndex = 2;
             this.metroTabControl1.Size = new System.Drawing.Size(1343, 481);
             this.metroTabControl1.TabIndex = 0;
             this.metroTabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.metroTabControl1_Selected);
@@ -475,6 +487,201 @@
             this.metroTextBox1.Size = new System.Drawing.Size(539, 28);
             this.metroTextBox1.TabIndex = 3;
             // 
+            // metroTabPage8
+            // 
+            this.metroTabPage8.BackColor = System.Drawing.Color.White;
+            this.metroTabPage8.Controls.Add(this.tableLayoutPanel1);
+            this.metroTabPage8.Controls.Add(this.richTextBox1);
+            this.metroTabPage8.CustomBackground = true;
+            this.metroTabPage8.ForeColor = System.Drawing.Color.White;
+            this.metroTabPage8.HorizontalScrollbarBarColor = true;
+            this.metroTabPage8.HorizontalScrollbarSize = 12;
+            this.metroTabPage8.Location = new System.Drawing.Point(4, 42);
+            this.metroTabPage8.Margin = new System.Windows.Forms.Padding(4);
+            this.metroTabPage8.Name = "metroTabPage8";
+            this.metroTabPage8.Size = new System.Drawing.Size(1335, 435);
+            this.metroTabPage8.TabIndex = 7;
+            this.metroTabPage8.Text = "About";
+            this.metroTabPage8.VerticalScrollbarBarColor = true;
+            this.metroTabPage8.VerticalScrollbarSize = 13;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.34944F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.65056F));
+            this.tableLayoutPanel1.Controls.Add(this.metroButton4, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.textBox1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.textBox2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.metroToggle1, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.textBox3, 0, 2);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(797, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 69F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 268F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(538, 435);
+            this.tableLayoutPanel1.TabIndex = 5;
+            // 
+            // metroButton4
+            // 
+            this.metroButton4.Location = new System.Drawing.Point(403, 4);
+            this.metroButton4.Margin = new System.Windows.Forms.Padding(4);
+            this.metroButton4.Name = "metroButton4";
+            this.metroButton4.Size = new System.Drawing.Size(100, 28);
+            this.metroButton4.TabIndex = 2;
+            this.metroButton4.Text = "Update Def";
+            this.metroButton4.Click += new System.EventHandler(this.metroButton4_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.White;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(391, 41);
+            this.textBox1.TabIndex = 4;
+            this.textBox1.Text = "Get the latest ErrorDef.json from the same location and import it using the below" +
+    " button";
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.White;
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(4, 53);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(391, 41);
+            this.textBox2.TabIndex = 5;
+            this.textBox2.Text = "Enable Mongo DB Integration";
+            // 
+            // metroToggle1
+            // 
+            this.metroToggle1.AutoSize = true;
+            this.metroToggle1.Location = new System.Drawing.Point(402, 52);
+            this.metroToggle1.Name = "metroToggle1";
+            this.metroToggle1.Size = new System.Drawing.Size(80, 21);
+            this.metroToggle1.TabIndex = 6;
+            this.metroToggle1.Text = "Off";
+            this.metroToggle1.UseVisualStyleBackColor = true;
+            this.metroToggle1.CheckedChanged += new System.EventHandler(this.metroToggle1_CheckedChanged);
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.Color.White;
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(4, 102);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(391, 61);
+            this.textBox3.TabIndex = 7;
+            this.textBox3.Text = "Filter Logs by Lines";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.Color.White;
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(675, 435);
+            this.richTextBox1.TabIndex = 3;
+            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
+            // 
+            // metroTabPage9
+            // 
+            this.metroTabPage9.Controls.Add(this.objectListView1);
+            this.metroTabPage9.HorizontalScrollbarBarColor = true;
+            this.metroTabPage9.Location = new System.Drawing.Point(4, 42);
+            this.metroTabPage9.Name = "metroTabPage9";
+            this.metroTabPage9.Size = new System.Drawing.Size(1335, 435);
+            this.metroTabPage9.TabIndex = 8;
+            this.metroTabPage9.Text = "Business Service Exec";
+            this.metroTabPage9.VerticalScrollbarBarColor = true;
+            // 
+            // objectListView1
+            // 
+            this.objectListView1.AllColumns.Add(this._RequestId);
+            this.objectListView1.AllColumns.Add(this._BsName);
+            this.objectListView1.AllColumns.Add(this._MethodInvoked);
+            this.objectListView1.AllColumns.Add(this._StartTime);
+            this.objectListView1.AllColumns.Add(this._EndTime);
+            this.objectListView1.AllColumns.Add(this._Line);
+            this.objectListView1.AllColumns.Add(this._RunTime);
+            this.objectListView1.CellEditUseWholeCell = false;
+            this.objectListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this._RequestId,
+            this._BsName,
+            this._MethodInvoked,
+            this._StartTime,
+            this._EndTime,
+            this._Line,
+            this._RunTime});
+            this.objectListView1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.objectListView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.objectListView1.GridLines = true;
+            this.objectListView1.HideSelection = false;
+            this.objectListView1.Location = new System.Drawing.Point(0, 0);
+            this.objectListView1.Name = "objectListView1";
+            this.objectListView1.ShowGroups = false;
+            this.objectListView1.Size = new System.Drawing.Size(1335, 435);
+            this.objectListView1.TabIndex = 2;
+            this.objectListView1.UseCompatibleStateImageBehavior = false;
+            this.objectListView1.View = System.Windows.Forms.View.Details;
+            // 
+            // _RequestId
+            // 
+            this._RequestId.AspectName = "RequestId";
+            this._RequestId.Text = "Request Id";
+            this._RequestId.Width = 192;
+            // 
+            // _BsName
+            // 
+            this._BsName.AspectName = "BsName";
+            this._BsName.Text = "Business Service Name";
+            this._BsName.Width = 183;
+            // 
+            // _MethodInvoked
+            // 
+            this._MethodInvoked.AspectName = "MethodInvoked";
+            this._MethodInvoked.Text = "Method Invoked";
+            this._MethodInvoked.Width = 155;
+            // 
+            // _StartTime
+            // 
+            this._StartTime.AspectName = "StartTime";
+            this._StartTime.Text = "Start Time";
+            this._StartTime.Width = 123;
+            // 
+            // _EndTime
+            // 
+            this._EndTime.AspectName = "EndTime";
+            this._EndTime.Text = "End Time";
+            this._EndTime.Width = 120;
+            // 
+            // _Line
+            // 
+            this._Line.AspectName = "Line";
+            this._Line.Text = "Line";
+            this._Line.Width = 96;
+            // 
             // metroTabPage3
             // 
             this.metroTabPage3.Controls.Add(this.listViewError);
@@ -612,109 +819,6 @@
             this.openInNotepadToolStripMenuItem3.Size = new System.Drawing.Size(213, 24);
             this.openInNotepadToolStripMenuItem3.Text = "Open in Notepad++";
             this.openInNotepadToolStripMenuItem3.Click += new System.EventHandler(this.openInNotepadToolStripMenuItem3_Click);
-            // 
-            // metroTabPage8
-            // 
-            this.metroTabPage8.BackColor = System.Drawing.Color.White;
-            this.metroTabPage8.Controls.Add(this.tableLayoutPanel1);
-            this.metroTabPage8.Controls.Add(this.richTextBox1);
-            this.metroTabPage8.CustomBackground = true;
-            this.metroTabPage8.ForeColor = System.Drawing.Color.White;
-            this.metroTabPage8.HorizontalScrollbarBarColor = true;
-            this.metroTabPage8.HorizontalScrollbarSize = 12;
-            this.metroTabPage8.Location = new System.Drawing.Point(4, 42);
-            this.metroTabPage8.Margin = new System.Windows.Forms.Padding(4);
-            this.metroTabPage8.Name = "metroTabPage8";
-            this.metroTabPage8.Size = new System.Drawing.Size(1335, 435);
-            this.metroTabPage8.TabIndex = 7;
-            this.metroTabPage8.Text = "About";
-            this.metroTabPage8.VerticalScrollbarBarColor = true;
-            this.metroTabPage8.VerticalScrollbarSize = 13;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.34944F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.65056F));
-            this.tableLayoutPanel1.Controls.Add(this.metroButton4, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textBox1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textBox2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.metroToggle1, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.textBox3, 0, 2);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(797, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 69F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 268F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(538, 435);
-            this.tableLayoutPanel1.TabIndex = 5;
-            // 
-            // metroButton4
-            // 
-            this.metroButton4.Location = new System.Drawing.Point(403, 4);
-            this.metroButton4.Margin = new System.Windows.Forms.Padding(4);
-            this.metroButton4.Name = "metroButton4";
-            this.metroButton4.Size = new System.Drawing.Size(100, 28);
-            this.metroButton4.TabIndex = 2;
-            this.metroButton4.Text = "Update Def";
-            this.metroButton4.Click += new System.EventHandler(this.metroButton4_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(4, 4);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(391, 41);
-            this.textBox1.TabIndex = 4;
-            this.textBox1.Text = "Get the latest ErrorDef.json from the same location and import it using the below" +
-    " button";
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.White;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(4, 53);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(391, 41);
-            this.textBox2.TabIndex = 5;
-            this.textBox2.Text = "Enable Mongo DB Integration";
-            // 
-            // metroToggle1
-            // 
-            this.metroToggle1.AutoSize = true;
-            this.metroToggle1.Location = new System.Drawing.Point(402, 52);
-            this.metroToggle1.Name = "metroToggle1";
-            this.metroToggle1.Size = new System.Drawing.Size(80, 21);
-            this.metroToggle1.TabIndex = 6;
-            this.metroToggle1.Text = "Off";
-            this.metroToggle1.UseVisualStyleBackColor = true;
-            this.metroToggle1.CheckedChanged += new System.EventHandler(this.metroToggle1_CheckedChanged);
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.BackColor = System.Drawing.Color.White;
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(675, 435);
-            this.richTextBox1.TabIndex = 3;
-            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             // 
             // metroTabPage1
             // 
@@ -1147,20 +1251,11 @@
             // 
             this.openLoadDef.FileName = "openFileDialog3";
             // 
-            // textBox3
+            // _RunTime
             // 
-            this.textBox3.BackColor = System.Drawing.Color.White;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(4, 102);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(391, 61);
-            this.textBox3.TabIndex = 7;
-            this.textBox3.Text = "Filter Logs by Lines";
+            this._RunTime.AspectName = "RunTime";
+            this._RunTime.Text = "Run Time";
+            this._RunTime.Width = 181;
             // 
             // Form1
             // 
@@ -1183,13 +1278,15 @@
             this.metroPanel3.PerformLayout();
             this.metroPanel2.ResumeLayout(false);
             this.metroPanel2.PerformLayout();
+            this.metroTabPage8.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.metroTabPage9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.objectListView1)).EndInit();
             this.metroTabPage3.ResumeLayout(false);
             this.contextMenuStripError.ResumeLayout(false);
             this.metroTabPage4.ResumeLayout(false);
             this.contextMenuStripTBUI.ResumeLayout(false);
-            this.metroTabPage8.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             this.metroTabPage1.ResumeLayout(false);
             this.contextMenuStripExecSQL.ResumeLayout(false);
             this.metroTabPage2.ResumeLayout(false);
@@ -1301,6 +1398,15 @@
         private System.Windows.Forms.TextBox textBox2;
         private MetroFramework.Controls.MetroToggle metroToggle1;
         private System.Windows.Forms.TextBox textBox3;
+        private MetroFramework.Controls.MetroTabPage metroTabPage9;
+        private BrightIdeasSoftware.ObjectListView objectListView1;
+        private BrightIdeasSoftware.OLVColumn _RequestId;
+        private BrightIdeasSoftware.OLVColumn _BsName;
+        private BrightIdeasSoftware.OLVColumn _MethodInvoked;
+        private BrightIdeasSoftware.OLVColumn _StartTime;
+        private BrightIdeasSoftware.OLVColumn _EndTime;
+        private BrightIdeasSoftware.OLVColumn _Line;
+        private BrightIdeasSoftware.OLVColumn _RunTime;
     }
 }
 
